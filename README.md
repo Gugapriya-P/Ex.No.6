@@ -135,14 +135,12 @@ async def compare_and_analyze_outputs(output1: str, output2: str) -> Dict[str, A
 async def main():
     print("# Ex.No.6 Development of Python Code Compatible with Multiple AI Tools")
     print("----------------------------------------------------------------------")
-
     # 1. Conceptual Tool Execution
     response_c = await call_conceptual_tool(MIGRATION_TASK_PROMPT)
     text_c, sources_c = extract_content(response_c, "Conceptual Tool")
     print("\n[1. CONCEPTUAL TOOL (High-Level Strategy)]")
     print(text_c)
     print(f"(Sources found: {len(sources_c)})")
-    
     # 2. Grounded Tool Execution
     response_g = await call_grounded_tool(MIGRATION_TASK_PROMPT)
     text_g, sources_g = extract_content(response_g, "Grounded Tool")
@@ -152,13 +150,11 @@ async def main():
     if sources_g:
         print("**Top Citations:**")
         for i, src in enumerate(sources_g[:2]): print(f"  {i+1}. {src['title']}")
-    
     # 3. Synergy Analysis
     response_a = await compare_and_analyze_outputs(text_c, text_g)
     text_a, _ = extract_content(response_a, "Analysis Tool")
     print("\n[3. FINAL ACTIONABLE IMPLEMENTATION PLAN (Synergy)]")
     print(text_a)
-
     print("\n----------------------------------------------------------------------")
 
 if 'pyodide' in sys.modules:
