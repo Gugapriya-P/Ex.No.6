@@ -66,7 +66,7 @@ Persona Consistency: Both tools maintained the Senior Cloud Architect persona, b
 
 <img width="462" height="404" alt="image" src="https://github.com/user-attachments/assets/d3c832fe-aba8-4b9a-ae05-c4465165543a" />
 ## CODE:
----
+```
 import json
 import time
 import random
@@ -161,7 +161,7 @@ if 'pyodide' in sys.modules:
     asyncio.run(main())
 else:
     pass
----
+```
 ### Conclusion
 
 This experiment successfully demonstrated the development of Python code capable of integrating and comparing outputs from multiple AI capabilities (persona-based vs. grounded search). The use of structured prompting and persona patterns proved effective in generating relevant technical responses, with grounding significantly enhancing the practical and timely nature of the advice.
